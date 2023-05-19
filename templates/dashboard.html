@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <script>
+        // Game functions
+        function startGame() {
+            // Logic to start the game
+        }
+
+        function pauseGame() {
+            // Logic to pause the game
+        }
+
+        function resetGame() {
+            // Logic to reset the game
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome, {{ user.username }}!</h1>
+    <p>API Key: {{ user.api_key }}</p>
+    <p>User Secret Key: {{ user.secret_key }}</p>
+    <h2>Actions</h2>
+    <ul>
+        <!-- Add links or forms for the various actions the admin can perform -->
+        <li><a href="#">Perform Arbitrage Transaction</a></li>
+        <li><a href="#">View Profit Distribution</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+
+    <!-- Add the section to display ongoing trading activity -->
+    <h2>Trading Activity</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for trade in trades %}
+            <tr>
+                <td>{{ trade.symbol }}</td>
+                <td>{{ trade.quantity }}</td>
+                <td>{{ trade.price }}</td>
+                <td>{{ trade.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Add form for entering trading volume -->
+    <h2>Enter Trading Volume</h2>
+    <form action="/set_trading_volume" method="post">
+        <label for="volume">Volume:</label>
+        <input type="number" id="volume" name="volume" required>
+        <input type="submit" value="Set Volume">
+    </form>
+
+    <!-- Add game controls -->
+    <h2>Game Controls</h2>
+    <button onclick="startGame()">Start Game</button>
+    <button onclick="pauseGame()">Pause Game</button>
+    <button onclick="resetGame()">Reset Game</button>
+</body>
+</html>

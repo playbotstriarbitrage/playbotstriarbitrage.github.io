@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        // Game functions
+        function startGame() {
+            // Logic to start the game
+        }
+
+        function pauseGame() {
+            // Logic to pause the game
+        }
+
+        function resetGame() {
+            // Logic to reset the game
+        }
+    </script>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form action="/signup" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <input type="submit" value="Sign Up">
+    </form>
+    <p>Already have an account? <a href="/signin">Sign in</a></p>
+
+    <!-- Add game controls -->
+    <h2>Game Controls</h2>
+    <button onclick="startGame()">Start Game</button>
+    <button onclick="pauseGame()">Pause Game</button>
+    <button onclick="resetGame()">Reset Game</button>
+</body>
+</html>

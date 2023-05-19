@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Interface</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        // Get the current hour of the day
+        var currentHour = new Date().getHours();
+
+        // Define the time ranges for different background colors
+        var morningStart = 6;
+        var afternoonStart = 12;
+        var eveningStart = 18;
+
+        // Get a reference to the <body> element
+        var bodyElement = document.querySelector('body');
+
+        // Update the class of the <body> element based on the current time of day
+        if (currentHour >= morningStart && currentHour < afternoonStart) {
+            bodyElement.classList.add('morning');
+        } else if (currentHour >= afternoonStart && currentHour < eveningStart) {
+            bodyElement.classList.add('afternoon');
+        } else if (currentHour >= eveningStart) {
+            bodyElement.classList.add('evening');
+        } else {
+            bodyElement.classList.add('night');
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Admin Interface</h1>
+    <p>Please sign up or log in to continue.</p>
+    <p><a href="/signup">Sign Up</a> | <a href="/login">Log In</a></p>
+</body>
+</html>
